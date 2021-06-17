@@ -30,17 +30,23 @@ const userPlay = () => {
 }
 
 userPlay();
-//2.
-/*
-Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-*/
-const playSingleRound = (playerSelection, computerSelection) => {
-    //if(...) => "You Lose! Paper beats Rock"
-    //if(...) => "You Lose! Rock beats Scissors"
-    //if(...) => "You Lose! Scissors beats Paper"
-    //if(...) => "You Win! Scissors beats Paper"
-    //if(...) => "You Win! Paper beats Rock"
-    //if(...) => "You Win! Rock beats Scissors"
-    //if(...) => "DRAW"
-    
+
+const playSingleRound = (playerInput, computerInput) => {
+    if (playerInput == ROCK && computerInput == PAPER) {
+        alert("You Lose! Paper beats rock");
+    } else if (playerInput == SCISSORS && computerInput == ROCK) {
+        alert("You Lose! Rock beats scissors");
+    } else if (playerInput == PAPER && computerInput == SCISSORS) {
+        alert("You Lose! Scissors beats paper");
+    } else if (playerInput == SCISSORS && computerInput == PAPER) {
+        alert("You Win! Scissors beats paper");
+    } else if (playerInput == PAPER && computerInput == ROCK) {
+        alert("You Win! Paper beats rock");
+    } else if (playerInput == ROCK && computerInput == SCISSORS) {
+        alert("You Win! Rock beats scissors");
+    } else if (playerInput == computerInput){
+        alert("It's a draw");
+    }    
 }
+
+playSingleRound(playerSelection, computerSelection);
