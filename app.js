@@ -1,6 +1,6 @@
-const ROCK = "rock";
-const PAPER = "paper";
-const SCISSORS = "scissors";
+const ROCK = "ROCK";
+const PAPER = "PAPER";
+const SCISSORS = "SCISSORS";
 
 let computerSelection;
 let playerSelection;
@@ -17,6 +17,19 @@ const computerPlay = () => {
     }
 }
 
+computerPlay();
+
+const userPlay = () => {
+   playerSelection = prompt("Please insert your choice: ROCK, PAPER or SCISSORS?");
+   playerSelection = playerSelection.toUpperCase();
+   if (playerSelection == ROCK || playerSelection == PAPER || playerSelection == SCISSORS) {
+    return playerSelection;
+   } else {
+       alert("You entered invalid input. Try again");
+   }
+}
+
+userPlay();
 //2.
 /*
 Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
