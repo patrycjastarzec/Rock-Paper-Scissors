@@ -5,32 +5,34 @@ const SCISSORS = "SCISSORS";
 let computerSelection;
 let playerSelection;
 
-// 1.
 const computerPlay = () => {
     let interval = Math.random()*100;
     if (interval < 33) {
-        return computerSelection = ROCK;
+        computerSelection = ROCK;
     } else if (interval < 66){
-        return computerSelection = PAPER;
+        computerSelection = PAPER;
     } else {
-        return computerSelection = SCISSORS;
+        computerSelection = SCISSORS;
     }
+    console.log(`Computer choice: ${computerSelection}`);
+    return computerSelection;
 }
 
-computerPlay();
+//computerPlay();
 
 const userPlay = () => {
    playerSelection = prompt("Please insert your choice: ROCK, PAPER or SCISSORS?");
    playerSelection = playerSelection.toUpperCase();
    if (playerSelection == ROCK || playerSelection == PAPER || playerSelection == SCISSORS) {
+    console.log(`Player choice: ${playerSelection}`);
     return playerSelection;
    } else {
        alert("You entered invalid input. Try again");
    }
 }
 
-userPlay();
-
+//userPlay();
+/*
 const playSingleRound = (playerInput, computerInput) => {
     if (playerInput == ROCK && computerInput == PAPER) {
         alert("You Lose! Paper beats rock");
@@ -50,3 +52,44 @@ const playSingleRound = (playerInput, computerInput) => {
 }
 
 playSingleRound(playerSelection, computerSelection);
+*/
+let computerScore = 0;
+let playerScore = 0;
+const playSingleRoundAndCountScores = (playerInput, computerInput) => {
+    if (playerInput == ROCK && computerInput == PAPER) {
+        computerScore++;
+    } else if (playerInput == SCISSORS && computerInput == ROCK) {
+        computerScore++;
+    } else if (playerInput == PAPER && computerInput == SCISSORS) {
+        computerScore++;
+    } else if (playerInput == SCISSORS && computerInput == PAPER) {
+        playerScore++;
+    } else if (playerInput == PAPER && computerInput == ROCK) {
+        playerScore++;
+    } else if (playerInput == ROCK && computerInput == SCISSORS) {
+        playerScore++;
+    }   
+}
+
+const game = () => {
+    let i = 0;
+    let roundNumber = 1;
+    while(i < 5) {
+        console.log(`Round: ${roundNumber}`);
+        userPlay();
+        computerPlay();
+        playSingleRoundAndCountScores(playerSelection, computerSelection);
+        console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
+        i++;
+        roundNumber++;
+    }
+    if(computerScore < playerScore){
+        alert("Player won");
+    } else if (computerScore > playerScore) {
+        alert("Computer won");
+    } else {
+        alert("It's a draw");
+    }
+}
+
+game();
