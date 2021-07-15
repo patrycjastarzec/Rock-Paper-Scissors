@@ -40,6 +40,7 @@ const playerPlay = (item) => {
 // 3. Function that count the scores and display the result
 let computerScore = 0;
 let playerScore = 0;
+/*
 const playRound = (playerInput, computerInput) => {
     if (playerInput == ROCK && computerInput == PAPER) {
         computerScore++;
@@ -54,6 +55,33 @@ const playRound = (playerInput, computerInput) => {
     } else if (playerInput == ROCK && computerInput == SCISSORS) {
         playerScore++;
     }
+    playerScoreDiv.textContent = playerScore;
+    computerScoreDiv.textContent = computerScore;
+
+    const final = () => {
+      if (playerScore == 5) {
+        alert('Player won!'); 
+      } else if (computerScore == 5){
+        alert('Computer won!');
+      }
+    }
+    final();
+}
+*/
+const playRound = (playerInput, computerInput) => {
+    if (
+        playerInput == ROCK && computerInput == PAPER ||
+        playerInput == SCISSORS && computerInput == ROCK ||
+        playerInput == PAPER && computerInput == SCISSORS
+        ) {
+        computerScore++;
+    } else if (
+        playerInput == SCISSORS && computerInput == PAPER ||
+        playerInput == PAPER && computerInput == ROCK ||
+        playerInput == ROCK && computerInput == SCISSORS
+        ) {
+        playerScore++;
+    } 
     playerScoreDiv.textContent = playerScore;
     computerScoreDiv.textContent = computerScore;
 
