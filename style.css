@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+  
+#left-column, #right-column {
+    text-align: center;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: black;
+}
+  
+#center {
+    display: flex;
+    justify-content: center;
+}
+  
+button{
+    margin: 0.3em;
+    font-family: Arial, sans-serif;
+    height: 2.5em;
+    width: 7em;
+}
+  
+p {
+    font-family: Arial, sans-serif;
+}
