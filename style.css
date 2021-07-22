@@ -1,9 +1,9 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
+    /*margin-left: 25%;*/
+    /*margin-right: 25%;*/
 }
   
 #left-column, #right-column {
@@ -12,7 +12,15 @@
     border-width: 0.1em;
     border-color: black;
 }
-  
+
+#left-column{
+    grid-column: 2/3;  
+}
+
+#right-column {
+    grid-column: 3/4;  
+}
+
 #center {
     display: flex;
     justify-content: center;
