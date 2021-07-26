@@ -1,13 +1,12 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /*margin-left: 25%;*/
-    /*margin-right: 25%;*/
 }
-  
+
 #left-column, #right-column {
-    text-align: center;
+    /*text-align: center;*/
     border-style: solid;
     border-width: 0.1em;
     border-color: black;
@@ -15,15 +14,24 @@
 
 #left-column{
     grid-column: 2/3;  
+    grid-row: 2/3;
+    min-width: 310px;
 }
 
 #right-column {
     grid-column: 3/4;  
+    grid-row: 2/3;
+    min-width: 310px;
 }
 
-#center {
+
+.center {
     display: flex;
     justify-content: center;
+}
+
+.left-padding {
+    padding-left: 20%;
 }
   
 button{
