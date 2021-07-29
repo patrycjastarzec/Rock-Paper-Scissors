@@ -50,7 +50,6 @@
 }
 
 
-
 #right-column {
     margin-top: 10vh;
     grid-column: 3/4;
@@ -65,7 +64,6 @@
 }
 
 
-
 .center {
     display: flex;
     justify-content: center;
@@ -73,8 +71,15 @@
 }
 
 .left-padding {
-    padding-left: 20%;
     margin-top: 5vh;
+    margin-left: 10%;
+    background-color: rgb(207, 223, 164);
+    width: 80%;
+    height: 30%;
+    border-radius: 5px;
+    padding-left: 3%;
+    padding-top: 8%;
+    border: 1px solid rgb(190, 190, 190);
 }
   
 button{
