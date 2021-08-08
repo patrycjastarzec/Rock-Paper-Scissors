@@ -8,6 +8,10 @@ const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
 
+const rockButtonMobile = document.getElementById('rock-mobile');
+const paperButtonMobile = document.getElementById('paper-mobile');
+const scissorsButtonMobile = document.getElementById('scissors-mobile');
+
 const gameButton = document.querySelectorAll('button');
 
 const ROCK = 'ROCK';
@@ -53,7 +57,7 @@ const selectItem = (item) => {
         
         playerScoreDiv.textContent = playerScore;
         computerScoreDiv.textContent = computerScore;
-
+        
         if (playerScore == 5) {
             gameButton.forEach(i => {
                 i.disabled = true;
@@ -74,3 +78,7 @@ const selectItem = (item) => {
 rockButton.addEventListener("click", selectItem.bind(this, ROCK));
 paperButton.addEventListener("click", selectItem.bind(this, PAPER));
 scissorsButton.addEventListener("click", selectItem.bind(this, SCISSORS));
+
+rockButtonMobile.addEventListener("click", selectItem.bind(this, ROCK));
+paperButtonMobile.addEventListener("click", selectItem.bind(this, PAPER));
+scissorsButtonMobile.addEventListener("click", selectItem.bind(this, SCISSORS));
