@@ -185,17 +185,17 @@ button:hover{
     box-shadow: 0 3px 10px 0 rgba(31, 38, 135, 0.37);
 }
 
-.circle::before{
+#first-circle{
     animation: loader 0.5s infinite alternate;
     animation-delay: 0s;
 }
 
-.circle{
+#second-circle{
     animation: loader 0.5s infinite alternate;
     animation-delay: 0.25s;
 }
 
-.circle::after{
+#third-circle{
     animation: loader 0.5s infinite alternate;
     animation-delay: 0.5s;
 }
@@ -214,4 +214,4 @@ button:hover{
     display: none;
 }
 
-} 
+}
